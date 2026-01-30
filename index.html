@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanz | Official Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; }
+
+        body {
+            background: #000;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* BACKGROUD BERGERAK (SMOOTH) */
+        .bg-animate {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(45deg, #000428, #004e92);
+            z-index: -1;
+        }
+
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(0, 212, 255, 0.1);
+            filter: blur(80px);
+            animation: move 20s infinite alternate ease-in-out;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(100%, 100%); }
+        }
+
+        /* LOADING */
+        #loader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1.5s ease-in-out;
+        }
+
+        .enter-text {
+            color: #00d4ff;
+            letter-spacing: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 20px;
+            text-shadow: 0 0 10px #00d4ff;
+            animation: breathe 2s infinite;
+        }
+
+        @keyframes breathe { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+        /* CARD GLASSMORPHISM */
+        .container {
+            width: 90%;
+            max-width: 420px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            padding: 50px 30px;
+            text-align: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transition: 0.5s;
+        }
+
+        .container:hover { border-color: rgba(0, 212, 255, 0.5); }
+
+        .profile-img {
+            width: 120px; height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: rgba(255,255,255,0.1);
+            display: flex; justify-content: center; align-items: center;
+            font-size: 50px;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        h1 { font-size: 35px; font-weight: 700; margin-bottom: 5px; letter-spacing: 2px; }
+        .school { font-size: 14px; color: #00d4ff; margin-bottom: 30px; display: block; letter-spacing: 1px; }
+
+        /* INFO LIST SMOOTH */
+        .info-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.05);
+            margin-bottom: 12px;
+            padding: 15px 20px;
+            border-radius: 20px;
+            transition: 0.3s ease;
+            text-align: left;
+        }
+
+        .info-item:hover { background: rgba(255,255,255,0.1); transform: scale(1.02); }
+        .info-item i { font-size: 20px; color: #00d4ff; margin-right: 15px; width: 25px; text-align: center; }
+        .info-item p { font-size: 14px; font-weight: 500; }
+
+        /* TIKTOK BUTTON */
+        .btn-tiktok {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: white;
+            color: black;
+            padding: 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-tiktok:hover { background: #00d4ff; color: white; box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3); }
+
+        /* AUDIO ICON */
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            opacity: 0.6;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-animate">
+        <div class="circle" style="width: 400px; height: 400px; top: -10%; left: -10%;"></div>
+        <div class="circle" style="width: 300px; height: 300px; bottom: -5%; right: -5%; background: rgba(0, 85, 255, 0.1);"></div>
+    </div>
+
+    <div id="loader" onclick="startApp()">
+        <div class="enter-text">TAP TO EXPLORE</div>
+    </div>
+
+    <div class="container">
+        <div class="profile-img">🔥</div>
+        <h1>HANZ</h1>
+        <span class="school">SMPN 1 DUKUHSETI</span>
+
+        <div class="info-item">
+            <i class="fas fa-user-clock"></i>
+            <p>13 Years Old (Otw 14)</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-gamepad"></i>
+            <p>Top 1 FF • ML Immortal • Bedwars</p>
+        </div>
+        <div class="info-item">
+            <i class="fas fa-headphones"></i>
+            <p>The Winner Takes It All • Bukan Cinta Biasa</p>
+        </div>
+
+        <a href="https://tiktok.com/@hannloplop1" class="btn-tiktok">
+            <i class="fab fa-tiktok"></i> Follow TikTok
+        </a>
+    </div>
+
+    <div class="music-toggle" onclick="togglePlay()"><i id="m-icon" class="fas fa-music"></i></div>
+
+    <audio id="myAudio" loop>
+        <source src="menerimaluka.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        var audio = document.getElementById("myAudio");
+        
+        function startApp() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                audio.play();
+            }, 1000);
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                document.getElementById('m-icon').className = "fas fa-music";
+            } else {
+                audio.pause();
+                document.getElementById('m-icon').className = "fas fa-volume-mute";
+            }
+        }
+    </script>
+</body>
+          </html>
